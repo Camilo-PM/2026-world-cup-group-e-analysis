@@ -1,10 +1,20 @@
 import pandas as pd
 import time
+from io import StringIO
+from pathlib import Path
 from config import TEAMS, RAW_DATA_PATH
 
 
 def get_fixtures_table(local_html_path):
-    tables = pd.read_html(local_html_path)
+    html_path = Path(local_html_path)
+
+    if not html_path.exists():
+        raise FileNotFoundError(f"No existe el archivo: {html_path}")
+
+    with open(html_path, "r", encoding="utf-8") as file:
+        html_content = file.read()
+
+    tables = pd.read_html(StringIO(html_content))
 
     for table in tables:
         columns = [str(col).lower() for col in table.columns]
@@ -17,10 +27,12 @@ def get_fixtures_table(local_html_path):
         ):
             return table
 
-    raise ValueError(f"No se encontró tabla de partidos en {local_html_path}")
+    raise ValueError(f"No se encontró tabla de partidos en {html_path}")
 
 
 def collect_last_10_matches():
+    RAW_DATA_PATH.mkdir(parents=True, exist_ok=True)
+
     for team, html_paths in TEAMS.items():
         print(f"Leyendo datos de {team}...")
 
@@ -41,13 +53,14 @@ def collect_last_10_matches():
             team_data.append(df)
 
         combined_df = pd.concat(team_data, ignore_index=True)
-
         combined_df = combined_df.sort_values("Date", ascending=False)
 
         last_10 = combined_df.head(10)
 
-        filename = team.lower().replace(" ", "_") + "_last_10.csv"
-        last_10.to_csv(RAW_DATA_PATH / filename, index=False)
+        filename = team.lower().replace(" ", "_").replace("ü", "u") + "_last_10.csv"
+        output_path = RAW_DATA_PATH / filename
+
+        last_10.to_csv(output_path, index=False)
 
         print(f"Guardado: {filename} | Partidos guardados: {len(last_10)}")
 

@@ -4,7 +4,7 @@ from config import PROCESSED_DATA_PATH, FINAL_DATA_PATH
 
 def analyze_group():
 
-    input_path = PROCESSED_DATA_PATH / "grupo_c_last_10_clean.csv"
+    input_path = PROCESSED_DATA_PATH / "grupo_d_last_10_clean.csv"
     df = pd.read_csv(input_path)
 
     summary = df.groupby("Team").agg(
@@ -43,11 +43,11 @@ def analyze_group():
     )
 
     # CSV principal
-    output_path = FINAL_DATA_PATH / "grupo_c_summary.csv"
+    output_path = FINAL_DATA_PATH / "grupo_d_summary.csv"
     summary.to_csv(output_path, index=False)
 
     # CSV Tableau
-    tableau_path = FINAL_DATA_PATH / "grupo_c_summary_tableau.csv"
+    tableau_path = FINAL_DATA_PATH / "grupo_d_summary_tableau.csv"
     summary.to_csv(
         tableau_path,
         index=False,
