@@ -6,21 +6,24 @@ RAW_DATA_PATH = BASE_DIR / "data" / "raw"
 PROCESSED_DATA_PATH = BASE_DIR / "data" / "processed"
 FINAL_DATA_PATH = BASE_DIR / "data" / "final"
 
+# ======================================
+# CONFIGURACIÓN GRUPO E
+# ======================================
+
 TEAMS = {
-    "United States": [
-        "data/raw/html/united_states.html",
-        "data/raw/html/united_states_2025.html"
+    "Germany": [
+        "data/raw/html/germany.html"
     ],
-    "Paraguay": [
-        "data/raw/html/paraguay.html",
-        "data/raw/html/paraguay_2025.html"
+
+    "Ecuador": [
+        "data/raw/html/ecuador.html"
     ],
-    "Australia": [
-        "data/raw/html/australia.html",
-        "data/raw/html/australia_2025.html"
+
+    "Ivory Coast": [
+        "data/raw/html/ivory_coast.html"
     ],
-    "Türkiye": [
-        "data/raw/html/turkiye.html",
-        "data/raw/html/turkiye_2025.html"
+
+    "Curacao": [
+        "data/raw/html/curacao.html"
     ]
 }

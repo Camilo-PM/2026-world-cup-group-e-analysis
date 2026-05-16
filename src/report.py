@@ -4,10 +4,10 @@ from config import FINAL_DATA_PATH
 
 def generate_report():
 
-    df = pd.read_csv(FINAL_DATA_PATH / "grupo_d_summary.csv")
+    df = pd.read_csv(FINAL_DATA_PATH / "grupo_e_summary.csv")
 
     report = f"""
-# Group D - FIFA World Cup 2026 Analysis
+# Group E - FIFA World Cup 2026 Analysis
 
 ## Team Rankings
 
@@ -28,7 +28,7 @@ def generate_report():
 4. Paraguay
 """
 
-    output_path = "reports/resumen_grupo_d.md"
+    output_path = "reports/resumen_grupo_e.md"
 
     with open(output_path, "w", encoding="utf-8") as f:
         f.write(report)

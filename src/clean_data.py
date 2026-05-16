@@ -37,7 +37,7 @@ def clean_all_files():
 
     final_df = pd.concat(all_data, ignore_index=True)
 
-    output_path = PROCESSED_DATA_PATH / "grupo_d_last_10_clean.csv"
+    output_path = PROCESSED_DATA_PATH / "grupo_e_last_10_clean.csv"
     final_df.to_csv(output_path, index=False)
 
     print("Archivo creado en:", output_path)

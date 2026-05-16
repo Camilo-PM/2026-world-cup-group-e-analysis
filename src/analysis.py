@@ -4,7 +4,7 @@ from config import PROCESSED_DATA_PATH, FINAL_DATA_PATH
 
 def analyze_group():
 
-    input_path = PROCESSED_DATA_PATH / "grupo_d_last_10_clean.csv"
+    input_path = PROCESSED_DATA_PATH / "grupo_e_last_10_clean.csv"
     df = pd.read_csv(input_path)
 
     summary = df.groupby("Team").agg(
@@ -26,8 +26,12 @@ def analyze_group():
 
     # Índices tipo scouting
     summary["Attack_Index"] = summary["Goals_For_per_Game"]
-    summary["Defense_Index"] = 1 / summary["Goals_Against_per_Game"]
-    summary["Form_Index"] = summary["Points_Form"] / 30
+
+    # Evita división por cero cuando un equipo no recibe goles
+    summary["Defense_Index"] = 1 / summary["Goals_Against_per_Game"].replace(0, 1)
+
+    # Forma calculada sobre máximo de puntos posible según partidos disponibles
+    summary["Form_Index"] = summary["Points_Form"] / (summary["Matches"] * 3)
 
     # Score final
     summary["Power_Score"] = (
@@ -42,12 +46,10 @@ def analyze_group():
         ascending=False
     )
 
-    # CSV principal
-    output_path = FINAL_DATA_PATH / "grupo_d_summary.csv"
+    output_path = FINAL_DATA_PATH / "grupo_e_summary.csv"
     summary.to_csv(output_path, index=False)
 
-    # CSV Tableau
-    tableau_path = FINAL_DATA_PATH / "grupo_d_summary_tableau.csv"
+    tableau_path = FINAL_DATA_PATH / "grupo_e_summary_tableau.csv"
     summary.to_csv(
         tableau_path,
         index=False,

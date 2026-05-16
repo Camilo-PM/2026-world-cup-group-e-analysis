@@ -1,13 +1,13 @@
 
-# Group D - FIFA World Cup 2026 Analysis
+# Group E - FIFA World Cup 2026 Analysis
 
 ## Team Rankings
 
-         Team  Power_Score  Points_Form  Goal_Difference
-      Türkiye     0.926429           22              7.0
-    Australia     0.715000           17              4.0
-United States     0.707500           16              1.0
-     Paraguay     0.580000           14              0.0
+       Team  Power_Score  Points_Form  Goal_Difference
+    Curacao     1.190000           24             23.0
+    Germany     1.183036           21             15.0
+Ivory Coast     1.015000           26             19.0
+    Ecuador     0.873333           18              7.0
 
 ## Key Insights
 

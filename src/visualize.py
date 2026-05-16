@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from config import FINAL_DATA_PATH
 
 # Leer datos
-df = pd.read_csv(FINAL_DATA_PATH / "grupo_d_summary.csv")
+df = pd.read_csv(FINAL_DATA_PATH / "grupo_e_summary.csv")
 
 # =========================
 # Power Ranking
@@ -14,7 +14,7 @@ df_power = df.sort_values("Power_Score", ascending=True)
 plt.figure(figsize=(10, 6))
 plt.barh(df_power["Team"], df_power["Power_Score"])
 
-plt.title("Grupo D - Power Ranking")
+plt.title("Grupo E - Power Ranking")
 plt.xlabel("Power Score")
 plt.ylabel("Selección")
 
@@ -31,7 +31,7 @@ df_form = df.sort_values("Points_Form", ascending=True)
 plt.figure(figsize=(10, 6))
 plt.barh(df_form["Team"], df_form["Points_Form"])
 
-plt.title("Grupo D - Puntos de forma")
+plt.title("Grupo E - Puntos de forma")
 plt.xlabel("Puntos")
 plt.ylabel("Selección")
 
@@ -57,7 +57,7 @@ for _, row in df.iterrows():
         row["Team"]
     )
 
-plt.title("Grupo D - Ataque vs Defensa")
+plt.title("Grupo E - Ataque vs Defensa")
 
 plt.xlabel("Goles a favor por partido")
 plt.ylabel("Goles en contra por partido")
@@ -79,7 +79,7 @@ plt.barh(
     df_gd["Goal_Difference"]
 )
 
-plt.title("Grupo D - Diferencia de gol")
+plt.title("Grupo E - Diferencia de gol")
 
 plt.xlabel("Diferencia de gol")
 plt.ylabel("Selección")
