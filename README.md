@@ -1,87 +1,158 @@
-2026 FIFA World Cup - Group D Analysis
+# FIFA World Cup 2026 – Group E Team Performance Analysis
 
-Data-driven analysis of the teams competing in Group D of the FIFA World Cup 2026 using recent match performance, statistical modeling, and football analytics visualizations.
+## Project Overview
 
-Teams Analyzed
-Türkiye
-Australia
-United States
-Paraguay
-Project Objective
+This project analyzes the projected FIFA World Cup 2026 Group E teams using data from each national team's last 10 matches. The analysis focuses on team form, offensive and defensive efficiency, consistency, and overall performance trends ahead of the tournament.
 
-This project evaluates the recent competitive performance of each national team based on their last 10 matches, including official competitions and international friendlies.
+The project combines Python-based data analysis, automated reporting, and Tableau visualizations to generate data-driven insights about the teams competing in Group E.
 
-The analysis focuses on:
+---
 
-Recent form
-Offensive efficiency
-Defensive stability
-Goal difference
-Win rate
-Team performance trends
-Power ranking projections
-Tech Stack
-Python
-Pandas
-Matplotlib
-Tableau Public
-Git & GitHub
-FBref Data
-Project Structure
-data/
-├── raw/
-├── processed/
-└── final/
+## Teams Analyzed
 
-reports/
-├── figures/
-└── resumen_grupo_d.md
+* Germany
+* Ecuador
+* Ivory Coast
+* Curacao
 
-src/
-├── collect_data.py
-├── clean_data.py
-├── analysis.py
-├── visualize.py
-└── report.py
-Key Metrics
+---
 
-The project generates several custom football analytics metrics:
+## Objectives
 
-Power Score
-Form Index
-Attack Index
-Defense Index
-Goal Difference
-Goals per Game
-Win Rate
-Visualizations
+* Analyze recent team performance before the FIFA World Cup 2026
+* Compare offensive and defensive efficiency between teams
+* Create custom performance indicators and rankings
+* Visualize team trends using Tableau dashboards
+* Generate reproducible sports analytics workflows
 
-The analysis includes:
+---
 
-Power Ranking
-Recent Form Ranking
-Attack vs Defense Scatter Plot
-Match Results Distribution
-Main Findings
-Türkiye produced the strongest overall statistical profile in the group.
-Australia showed the most balanced defensive structure.
-United States demonstrated strong attacking output but defensive inconsistency.
-Paraguay displayed a conservative defensive-oriented profile.
-Tableau Dashboard
+## Data Sources
 
-(Add Tableau Public link here)
+* FBref match logs and national team statistics
+* Manually downloaded HTML files for local parsing
+* Last 10 matches per national team
 
-Future Improvements
-Expected Goals (xG) analysis
-Player-level scouting metrics
-Possession and pressing statistics
-Match outcome simulations
-Interactive dashboards
-Tournament-wide comparison models
-Author
+---
 
-Camilo Pérez Miranda
-Data Analyst | Sports Analytics | Data Visualization
+## Methodology
 
-LinkedIn
+The project pipeline includes:
+
+1. Data Collection
+
+   * Local FBref HTML parsing using pandas
+
+2. Data Cleaning
+
+   * Match filtering
+   * Standardization of results and metrics
+   * Goal difference calculations
+
+3. Statistical Analysis
+
+   * Win rate
+   * Goals scored and conceded
+   * Attack and defense indexes
+   * Form index
+   * Custom Power Score metric
+
+4. Visualization
+
+   * Team rankings
+   * Offensive vs defensive efficiency
+   * Goal difference analysis
+   * Tableau interactive dashboard
+
+5. Automated Reporting
+
+   * Markdown report generation
+
+---
+
+## Key Metrics
+
+* Matches Played
+* Wins / Draws / Losses
+* Goals For
+* Goals Against
+* Goal Difference
+* Goals Per Game
+* Defensive Efficiency
+* Form Index
+* Power Score
+
+---
+
+## Key Findings
+
+* Ivory Coast emerged as the most balanced team statistically
+* Germany showed the strongest offensive output but weaker defensive stability
+* Ecuador demonstrated elite defensive organization but limited offensive production
+* Curacao produced strong numbers, although partially influenced by weaker opposition quality
+
+---
+
+## Tableau Dashboard
+
+View the interactive Tableau dashboard here:
+
+https://public.tableau.com/app/profile/camilo.perez5892/viz/GroupETeamPerformanceAnalysisFIFAWorldCup2026/Dashboard1?publish=yes
+
+---
+
+## Technologies Used
+
+* Python
+* Pandas
+* Matplotlib
+* Tableau Public
+* VS Code
+* Git & GitHub
+
+---
+
+## Project Structure
+
+```plaintext
+Group E/
+│
+├── data/
+│   ├── raw/
+│   ├── processed/
+│   └── final/
+│
+├── reports/
+│   └── figures/
+│
+├── src/
+│
+├── dashboard/
+│
+├── README.md
+└── requirements.txt
+```
+
+---
+
+## How to Run the Project
+
+```bash
+python src/collect_data.py
+python src/clean_data.py
+python src/analysis.py
+python src/visualize.py
+python src/report.py
+```
+
+---
+
+## Future Improvements
+
+* Full tournament simulation
+* Opponent strength weighting
+* Expected goals (xG) integration
+* Streamlit dashboard deployment
+* Multi-group comparative analysis
+
 GitHub
