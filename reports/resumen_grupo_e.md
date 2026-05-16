@@ -4,10 +4,10 @@
 ## Team Rankings
 
        Team  Power_Score  Points_Form  Goal_Difference
-    Curacao     1.190000           24             23.0
-    Germany     1.183036           21             15.0
-Ivory Coast     1.015000           26             19.0
-    Ecuador     0.873333           18              7.0
+Ivory Coast     0.982857           22             13.0
+    Germany     0.960909           21             12.0
+    Curacao     0.817857           17             13.0
+    Ecuador     0.625000           14              3.0
 
 ## Key Insights
 
